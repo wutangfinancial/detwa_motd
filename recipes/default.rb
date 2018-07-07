@@ -6,10 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-package ['tree', 'ntp' ] do
-  action :upgrade
-end
-
 template '/etc/motd' do
   source 'motd.erb'
   action :create
@@ -18,6 +14,3 @@ template '/etc/motd' do
   mode '0755'
 end
 
-service 'ntp' do
-  action [:enable, :start ]
-end
